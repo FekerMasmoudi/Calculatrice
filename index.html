@@ -13,74 +13,88 @@
     td{
         border: 2;
     }
+    button{
+        width: 100%;
+    }
 </style>
 <body>
-    <table>
+    <table border =2 width="50%">
     <tr>
-        <td with="75%">
-            <button id></button:id>
+        <td colspan="3">
+            <input id="result"  size="100"/>
         </td>
         
         <td>
-            <button:id="CE">CE</button:id>
+            <button onclick="reset()"  id="CE">CE</button>
         </td>
     </tr>
     <tr>
         <td>
-            <button:id="un">1</button:id>
+            <button onclick="calc()"  id="1">1</button>
         </td>
         <td>
-            <button:id="deux">2</button:id>
+            <button onclick="calc()"  id="2">2</button>
         </td>
         <td>
-            <button:id="trois">3</button:id>
+            <button onclick="calc()"  id="3">3</button>
         </td>
         <td>
-            <button:id="plus">+</button:id>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button:id="quatre">4</button:id>
-        </td>
-        <td>
-            <button:id="cinq">5</button:id>
-        </td>
-        <td>
-            <button:id="six">6</button:id>
-        </td>
-        <td>
-            <button:id="moins">-</button:id>
+            <button onclick="calc()"  id="+">+</button>
         </td>
     </tr>
     <tr>
         <td>
-            <button:id="sept">7</button:id>
+            <button onclick="calc()"  id="4">4</button>
         </td>
         <td>
-            <button:id="huit">8</button:id>
+            <button onclick="calc()"  id="5">5</button>
         </td>
         <td>
-            <button:id="neuf">9</button:id>
+            <button onclick="calc()"  id="6">6</button>
         </td>
         <td>
-            <button:id="sur">/</button:id>
+            <button onclick="calc()"  id="-">-</button>
         </td>
     </tr>
     <tr>
         <td>
-            <button:id="zero">0</button:id>
+            <button onclick="calc()"  id="7">7</button>
         </td>
         <td>
-            <button:id="point">.</button:id>
+            <button onclick="calc()"  id="8">8</button>
         </td>
         <td>
-            <button id="egal">=</button>
+            <button onclick="calc()"  id="9">9</button>
         </td>
         <td>
-            <button:id></button:id>
+            <button onclick="calc()"  id="/">/</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="calc()"  id="0">0</button>
+        </td>
+        <td>
+            <button onclick="calc()"  id=".">.</button>
+        </td>
+        <td>
+            <button onclick="compute()"  id="=">=</button>
+        </td>
+        <td>
+            <button onclick="calc()"  id="*">*</button>
         </td>
     </tr>
 </table>
+<script>
+    function calc(){
+        document.getElementById("result").value+=event.target.id;
+    }
+    function compute(){
+        document.getElementById("result").value=eval(document.getElementById("result").value);
+    }
+    function reset(){
+        document.getElementById("result").value="";
+    }
+</script>
 </body>
 </html>
